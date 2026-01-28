@@ -12,6 +12,8 @@
   --space-500: 40px;
   --space-300: 24px;
   --space-200: 16px;
+  /* Transition */
+  --transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* Typography Styles */
@@ -51,17 +53,51 @@ body {
 }
 
 .card {
+  position: relative;
   width: 320px;
   height: 499px;
   border-radius: 20px;
   text-align: center;
   padding: var(--space-200);
   background-color: var(--color-white);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform: rotateX(0);
 
+  &::after {
+    content: '';
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    width: 80%;
+    height: 10px;
+    bottom: 0px;
+    left: 50%;
+    border-radius: 50%;
+    filter: blur(10px);
+    opacity: 1;
+    transform: translateX(-50%) translateZ(-1px) translateY(0);
+    transition: all 0.4s ease;
+  }
+  &:hover {
+    transform: translateY(-8px);
+    transform: rotateX(2deg);
+  }
+
+  &:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateZ(-1px) translateY(25px) scale(0.8);
+  }
+
+  /* &:hover img {
+    transform: scale(1.005);
+  } */
   & img {
     width: 288px;
     height: 288px;
     border-radius: 10px;
+    transition: var(--transition);
+    transform: scale(1);
   }
 
   & h2 {
