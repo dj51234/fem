@@ -1,0 +1,116 @@
+/* 1. FONT REGISTRATION */
+/* Assuming your files are named exactly like this in a /fonts folder */
+@font-face {
+  font-family: 'Figtree';
+  src: url('./assets/fonts/static/Figtree-Medium.ttf') format('ttf');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Figtree';
+  src: url('./fonts/Figtree-ExtraBold.ttf') format('ttf');
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* 2. DESIGN SYSTEM VARIABLES */
+:root {
+  /* Colors */
+  --clr-yellow: #f4d04e;
+  --clr-gray-950: #111111;
+  --clr-gray-500: #6b6b6b;
+  --clr-white: #ffffff;
+
+  /* Spacing Scale */
+  --space-300: 24px;
+  --space-150: 12px;
+  --space-100: 8px;
+  --space-50: 4px;
+
+  /* Typography Core */
+  --ff-primary: 'Figtree', sans-serif;
+  --lh-base: 150%;
+  --ls-base: 0px;
+  --fw-medium: 500;
+  --fw-extra-bold: 800;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. TEXT PRESETS */
+.text-preset-1 {
+  font-family: var(--ff-primary);
+  font-size: 20px;
+  line-height: var(--lh-base);
+  font-weight: var(--fw-extra-bold);
+  letter-spacing: var(--ls-base);
+}
+
+.text-preset-2 {
+  font-family: var(--ff-primary);
+  font-size: 16px;
+  line-height: var(--lh-base);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-base);
+  color: var(--clr-gray-500);
+}
+
+.text-preset-3 {
+  font-family: var(--ff-primary);
+  font-size: 14px;
+  line-height: var(--lh-base);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-base);
+}
+
+.text-preset-3-bold {
+  font-family: var(--ff-primary);
+  font-size: 14px;
+  line-height: var(--lh-base);
+  font-weight: var(--fw-extra-bold);
+  letter-spacing: var(--ls-base);
+}
+
+body {
+  font-family: var(--ff-primary);
+  background-color: var(--clr-yellow);
+}
+
+.card {
+  background: var(--clr-white);
+  width: 327px;
+  height: 501px;
+  border-radius: 20px;
+  padding: var(--space-300);
+  border: 1px solid var(--clr-gray-950);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  & .card-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+
+  & .card-content {
+    margin-block: var(--space-300);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-150);
+
+    & .tag {
+      background: var(--clr-yellow);
+      color: var(--clr-gray-950);
+      padding: var(--space-50) var(--space-150);
+      border-radius: var(--space-50);
+    }
+  }
+}
