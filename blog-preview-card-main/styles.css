@@ -45,10 +45,14 @@
 /* 3. TEXT PRESETS */
 .text-preset-1 {
   font-family: var(--ff-primary);
-  font-size: 20px;
+  font-size: 24px;
   line-height: var(--lh-base);
   font-weight: var(--fw-extra-bold);
   letter-spacing: var(--ls-base);
+
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+  }
 }
 
 .text-preset-2 {
@@ -57,15 +61,22 @@
   line-height: var(--lh-base);
   font-weight: var(--fw-medium);
   letter-spacing: var(--ls-base);
-  color: var(--clr-gray-500);
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
 }
 
 .text-preset-3 {
   font-family: var(--ff-primary);
-  font-size: 12px;
+  font-size: 14px;
   line-height: var(--lh-base);
   font-weight: var(--fw-medium);
   letter-spacing: var(--ls-base);
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
 }
 
 .text-preset-3-bold {
@@ -74,6 +85,10 @@
   line-height: var(--lh-base);
   font-weight: var(--fw-extra-bold);
   letter-spacing: var(--ls-base);
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
 }
 
 html {
@@ -121,6 +136,10 @@ body {
       padding: var(--space-50) var(--space-150);
       border-radius: var(--space-50);
     }
+
+    & .card-text {
+      color: var(--clr-gray-500);
+    }
   }
 
   & .author {
@@ -130,5 +149,12 @@ body {
     & .author-img {
       width: 32px;
     }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    width: 384px;
+    height: 522px;
   }
 }
