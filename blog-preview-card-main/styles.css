@@ -62,7 +62,7 @@
 
 .text-preset-3 {
   font-family: var(--ff-primary);
-  font-size: 14px;
+  font-size: 12px;
   line-height: var(--lh-base);
   font-weight: var(--fw-medium);
   letter-spacing: var(--ls-base);
@@ -76,9 +76,17 @@
   letter-spacing: var(--ls-base);
 }
 
+html {
+  height: 100%;
+}
+
 body {
   font-family: var(--ff-primary);
   background-color: var(--clr-yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .card {
@@ -91,6 +99,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: 10px 10px 0 0 var(--clr-gray-950);
 
   & .card-image {
     width: 100%;
@@ -111,6 +120,15 @@ body {
       color: var(--clr-gray-950);
       padding: var(--space-50) var(--space-150);
       border-radius: var(--space-50);
+    }
+  }
+
+  & .author {
+    display: flex;
+    gap: var(--space-150);
+    align-items: center;
+    & .author-img {
+      width: 32px;
     }
   }
 }
